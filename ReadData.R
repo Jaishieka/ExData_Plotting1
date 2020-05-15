@@ -1,0 +1,5 @@
+Edata <- read.table("C:/Users/94769/Documents/EDA/household_power_consumption.txt",header = TRUE, sep = ";",colClasses = c("character","character",rep("numeric",7)),na.strings = "?")
+Edata <- read.table("C:/Users/94769/Documents/EDA/household_power_consumption.txt",header = TRUE, sep = ";",colClasses = c("character","character",rep("numeric",7)),na.strings = "?")
+Edata_sub <- subset(Edata,Edata$Date == "1/2/2007"|Edata$Date == "2/2/2007")
+Edata_sub$Date <- as.Date(Edata_sub$Date,format = "%d/%m/%Y")
+Edata_sub$DateTime <- as.POSIXct(paste(Edata_sub$Date,Edata_sub$Time))
